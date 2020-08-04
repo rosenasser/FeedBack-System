@@ -1,0 +1,15 @@
+#include <Servo.h>
+
+Servo motor;
+void setup()
+{
+  motor.attach(12);
+}
+
+void loop()
+{
+  int v=analogRead(A0); //Reading the Analog input signal from the potentiometer
+  v= map(v,0,1023,0,180); //Changing the range of x form (0,1023) to (0,180) 
+  motor.write(v); //Moving the second motor with v value 
+ 
+}
